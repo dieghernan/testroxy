@@ -13,7 +13,7 @@ Description: This os a full text to check the implementation of
     <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AL%3A2015%3A012%3ATOC>.
     Let's talk about dois: a regular doi from 'abclass'
     <doi:10.1093/biomet/asu017>, with caps from 'zeitgebr'
-    <<DOI:10.1086/160554>> and with masks from 'raytracing'
+    <DOI:10.1086/160554> and with masks from 'raytracing'
     <doi:10.1175/1520-0469(1996)053%3C2365:PORWON%3E2.0.CO;2>.  By last,
     arXiv: One from 'abess' <arXiv:1702.04690>, different casing by 'DLL'
     <arxiv:1907.12732>, strange on from 'grove' <arXiv:1602.03990v2
