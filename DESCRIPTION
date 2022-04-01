@@ -1,0 +1,24 @@
+Package: testroxy
+Title: A Mock Package
+Version: 0.0.1
+Authors@R: 
+    person("John", "Doe", , "john.doe@example.com", role = c("aut", "cre"))
+Description: This os a full text to check the implementation of
+    autolinking urls by roxygen2. The examples are taken from CRAN
+    packages. Example on urls: See a non secured link on 'IRISSeismic',
+    <http://service.iris.edu/>, regular link on 'abjutils'
+    <https://abj.org.br/>, a link with masks on 'MEDITS'
+    <https://www.sibm.it/SITO%20MEDITS/principaleprogramme.htm> and the
+    last with different masks from 'ggsolvencyii'
+    <https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AL%3A2015%3A012%3ATOC>.
+    Let's talk about dois: a regular doi from 'abclass'
+    <doi:10.1093/biomet/asu017>, with caps from 'zeitgebr'
+    <<DOI:10.1086/160554>> and with masks from 'raytracing'
+    <doi:10.1175/1520-0469(1996)053%3C2365:PORWON%3E2.0.CO;2>.  By last,
+    arXiv: One from 'abess' <arXiv:1702.04690>, different casing by 'DLL'
+    <arxiv:1907.12732>, strange on from 'grove' <arXiv:1602.03990v2
+    [stat.ME]> and old-style from 'QGameTheory' <arXiv:quant-ph/0208069>.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2.9000

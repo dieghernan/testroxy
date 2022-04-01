@@ -1,0 +1,77 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message =  FALSE,
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# testroxy
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This is an example package for testing **roxygen2** changes.
+
+## Analisis of urls on Description field of `DESCRIPTION` files
+
+Run the following:
+
+
+
+
+```{r}
+
+library(stringr)
+library(dplyr, warn.conflicts = FALSE)
+library(tidyr, warn.conflicts = FALSE)
+
+# Get db
+cran <- tools::CRAN_package_db() %>%
+  mutate(date_pack = as.Date(str_split_fixed(Packaged, " ", 2)[, 1])) %>%
+  select(Package, date_pack, Description)
+
+# Search for patterns
+pattern <- "<(DOI|doi|http|https|arxiv|arXiv):(.*?)>"
+
+extract_urls <- str_extract_all(cran$Description,
+  regex(pattern),
+  simplify = TRUE
+) %>%
+  as.data.frame() %>%
+  bind_cols(cran, .) %>%
+  filter(V1 != "") %>%
+  select(-Description)
+
+# Analyse patterns
+allurls <- extract_urls %>%
+  pivot_longer(
+    cols = -c(Package, date_pack),
+    names_to = "dropfield",
+    values_to = "url"
+  ) %>%
+  # Remove blanks. etc
+  filter(url != "" & !is.na(url)) %>%
+  mutate(domain = str_split(url, "<|:", simplify = TRUE)[, 2]) %>%
+  select(-dropfield)
+
+allurls
+
+
+unique(allurls$domain)
+
+# With mask symbols
+masked <- allurls %>%
+  slice(grep("%", allurls$url))
+
+masked
+```
