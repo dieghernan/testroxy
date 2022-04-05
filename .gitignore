@@ -3,3 +3,6 @@
 .Rdata
 .httr-oauth
 .DS_Store
+testroxy.Rcheck/
+testroxy*.tar.gz
+testroxy*.tgz

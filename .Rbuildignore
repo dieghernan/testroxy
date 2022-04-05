@@ -5,3 +5,6 @@
 ^README\.Rmd$
 ^_pkgdown\.yml$
 ^\.github$
+^testroxy\.Rcheck$
+^testroxy.*\.tar\.gz$
+^testroxy.*\.tgz$
